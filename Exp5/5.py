@@ -1,6 +1,5 @@
 import random
 import math
-
 POP_SIZE = 20
 CHROMOSOME_LENGTH = 10
 GENERATIONS = 5
@@ -25,12 +24,12 @@ def selection(population):
             return chromosome
 
     return population[-1]
-
+#Single-Point Crossover. Selects a random position and exchanges the remaining bits of two parents to create two children.
 def crossover(p1, p2):
     point = random.randint(1, CHROMOSOME_LENGTH - 1)
     return (p1[:point] + p2[point:],
             p2[:point] + p1[point:]), point
-
+#Bit-Flip Mutation.1% chance of 0to1 or 1 to 0 
 def mutate(chromosome):
     bits = list(chromosome)
     flipped = []
@@ -44,7 +43,7 @@ population = [
     ''.join(random.choice('01') for _ in range(CHROMOSOME_LENGTH))
     for _ in range(POP_SIZE)
 ]
-
+#repeats algo 5 times:sort,elitism,selection,crossover,mutation,replacement,summary.
 for generation in range(GENERATIONS):
     print(f"GENERATION {generation + 1}")
 

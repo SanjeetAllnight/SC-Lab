@@ -18,8 +18,8 @@ def find_local_extrema(positions, fitness):
 def particle_swarm_optimization(
     n_particles=10,
     max_iterations=10,
-    lower_bound=-1,
-    upper_bound=2,
+    lower_bound=-0,
+    upper_bound=1,
     w=0.7,
     c1=1.5,
     c2=1.5,
@@ -93,8 +93,8 @@ if __name__ == "__main__":
     best_x, best_fitness = particle_swarm_optimization(
         n_particles=10,
         max_iterations=10,
-        lower_bound=-1,
-        upper_bound=2,
+        lower_bound=0,
+        upper_bound=1,
         w=0.7,
         c1=1.5,
         c2=1.5,
