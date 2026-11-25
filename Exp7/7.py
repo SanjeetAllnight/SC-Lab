@@ -28,7 +28,6 @@ def distance(ch):
     for i in range(10):
         total += dist[tour[i]][tour[(i+1) % 10]]
     return total
-
 # Fitness function
 def fitness(ch):
     return 1 / distance(ch)
